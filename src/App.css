@@ -1,0 +1,93 @@
+@import url(./assets/css/docs.bundle.css);
+/* @import url(./assets/css/template.bundle.css); */
+@import url(./assets/css/template.dark.bundle.css);
+
+:root {
+    --bs-blue: #2787f5;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #28a745;
+    --bs-teal: #20c997;
+    --bs-cyan: #17a2b8;
+    --bs-white: #ffffff;
+    --bs-gray: #3a393b;
+    --bs-gray-dark: #1e2126;
+    --bs-gray-100: #a7a6a8;
+    --bs-gray-200: #908f93;
+    --bs-gray-300: #848387;
+    --bs-gray-400: #6f6e72;
+    --bs-gray-500: #575659;
+    --bs-gray-600: #3a393b;
+    --bs-gray-700: var(--bs-gray-dark);
+    --bs-gray-800: var(--bs-gray-dark);
+    --bs-gray-900: #1a1d21;
+    --bs-primary: var(--bs-blue);
+    --bs-primary-1: #0f79f4;
+    --bs-secondary: #292d34;
+    --bs-success: var(--bs-green);
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #1a1d21;
+    --bs-dark: var(--bs-gray-dark);
+    --bs-white: #ffffff;
+    --bs-primary-rgb: 39, 135, 245;
+    --bs-secondary-rgb: 41, 45, 52;
+    --bs-success-rgb: 40, 167, 69;
+    --bs-info-rgb: 23, 162, 184;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 26, 29, 33;
+    --bs-dark-rgb: 30, 33, 38;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 22, 25, 28;
+    --bs-body-color-rgb: 167, 166, 168;
+    --bs-body-bg-rgb: 22, 25, 28;
+    --bs-font-sans-serif: Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 0.9375rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.6;
+    --bs-body-color: var(--bs-gray-100);
+    --bs-text-white: #ffffff;
+    --bs-text-caption: #757476;
+    --bs-body-bg: #16191c;
+    --text-white-50: rgba(255, 255, 255, .5);
+    --bs-btn-soft-white: #333637;
+    --text-primary-color:var(--bs-primary);
+    --text-color: var(--bs-body-color);
+    --icon-font-md:24px;
+    --icon-font-sm:20px;
+    --icon-font-lg:28px;
+    --bs-body-text-align:left
+}
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.w-nowrap{white-space: nowrap;}
+.cursor-pointer{cursor: pointer;}
+.common_icon.font-sm{--icon-font:var(--icon-font-sm)}
+.common_icon.font-md{--icon-font:var(--icon-font-md)}
+.common_icon.font-lg{--icon-font:var(--icon-font-lg)}
+.common_icon{mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: contain;-webkit-mask-size: contain;background-color: var(--text-color);height: var(--icon-font);width: var(--icon-font);display: inline-block;position: relative;}
+.common_icon.primary{--text-color:var(--text-primary-color)}
+.common_icon.EditIcon{mask-image: url(./assets/img/icons/EditIcon.svg);--webkit-mask-image: url(./assets/img/icons/EditIcon.svg);}
+.common_icon.CloseIcon{mask-image: url(./assets/img/icons/CloseIcon.svg);--webkit-mask-image: url(./assets/img/icons/CloseIcon.svg);}
+.common_icon.UsersIcon{mask-image: url(./assets/img/icons/UsersIcon.svg);--webkit-mask-image: url(./assets/img/icons/UsersIcon.svg);}
+.common_icon.SettingIcon{mask-image: url(./assets/img/icons/SettingIcon.svg);--webkit-mask-image: url(./assets/img/icons/SettingIcon.svg);}
+.common_icon.NotificationIcon{mask-image: url(./assets/img/icons/NoficationIcon.svg);--webkit-mask-image: url(./assets/img/icons/NoficationIcon.svg);}
+.common_icon.LightModeIcon{mask-image: url(./assets/img/icons/LightMode.svg);--webkit-mask-image: url(./assets/img/icons/LightMode.svg);}
+.common_icon.DarkModeIcon{mask-image: url(./assets/img/icons/DarkModeIcon.svg);--webkit-mask-image: url(./assets/img/icons/DarkModeIcon.svg);}
+.common_icon.ChatsIcon{mask-image: url(./assets/img/icons/ChatIcon.svg);--webkit-mask-image: url(./assets/img/icons/ChatIcon.svg);}
+.common_icon.SearchIcon{mask-image: url(./assets/img/icons/SearchIcon.svg);--webkit-mask-image: url(./assets/img/icons/SearchIcon.svg);}
+.common_icon.CloseIcon{mask-image: url(./assets/img/icons/CloseIcon.svg);--webkit-mask-image: url(./assets/img/icons/CloseIcon.svg);}
