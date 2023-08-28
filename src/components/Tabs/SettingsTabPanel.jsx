@@ -1,5 +1,6 @@
 import React from 'react'
 import { TabLabel } from '../common/Constant'
+import Link from '../common/Link'
 
 export default function SettingsTabPanel() {
   return (
@@ -43,11 +44,11 @@ export default function SettingsTabPanel() {
                                     <p>wright@studio.com</p>
                                 </div>
                                 <div className="col-auto">
-                                    <a href="#" className="text-muted">
+                                    <Link href="#" className="text-muted">
                                         <div className="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -66,12 +67,12 @@ export default function SettingsTabPanel() {
                                 <div className="accordion accordion-flush" id="accordion-profile">
                                     <div className="accordion-item">
                                         <div className="accordion-header" id="accordion-profile-1">
-                                            <a href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-profile-body-1" aria-expanded="false" aria-controls="accordion-profile-body-1">
+                                            <Link href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-profile-body-1" aria-expanded="false" aria-controls="accordion-profile-body-1">
                                                 <div>
                                                     <h5>Profile settings</h5>
                                                     <p>Change your profile settings</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div id="accordion-profile-body-1" className="accordion-collapse collapse" aria-labelledby="accordion-profile-1" data-parent="#accordion-profile">
@@ -103,12 +104,12 @@ export default function SettingsTabPanel() {
 
                                     <div className="accordion-item">
                                         <div className="accordion-header" id="accordion-profile-2">
-                                            <a href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-profile-body-2" aria-expanded="false" aria-controls="accordion-profile-body-2">
+                                            <Link href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-profile-body-2" aria-expanded="false" aria-controls="accordion-profile-body-2">
                                                 <div>
                                                     <h5>Connected accounts</h5>
                                                     <p>Connect with your accounts</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div id="accordion-profile-body-2" className="accordion-collapse collapse" aria-labelledby="accordion-profile-2" data-parent="#accordion-profile">
@@ -142,14 +143,14 @@ export default function SettingsTabPanel() {
                                                     <p>Choose light or dark theme</p>
                                                 </div>
                                                 <div className="col-auto">
-                                                    <a className="switcher-btn text-reset" href="#!" title="Themes">
+                                                    <Link className="switcher-btn text-reset" href="#!" title="Themes">
                                                         <div className="switcher-icon switcher-icon-dark icon icon-lg d-none" data-theme-mode="dark">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                                                         </div>
                                                         <div className="switcher-icon switcher-icon-light icon icon-lg d-none" data-theme-mode="light">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,12 +173,12 @@ export default function SettingsTabPanel() {
                                 <div className="accordion accordion-flush" id="accordion-security">
                                     <div className="accordion-item">
                                         <div className="accordion-header" id="accordion-security-1">
-                                            <a href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-security-body-1" aria-expanded="false" aria-controls="accordion-security-body-1">
+                                            <Link href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-security-body-1" aria-expanded="false" aria-controls="accordion-security-body-1">
                                                 <div>
                                                     <h5>Password</h5>
                                                     <p>Change your password</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div id="accordion-security-body-1" className="accordion-collapse collapse" aria-labelledby="accordion-security-1" data-parent="#accordion-security">
@@ -232,7 +233,7 @@ export default function SettingsTabPanel() {
                             <small className="text-muted me-auto">Storage</small>
 
                             <div className="flex align-items-center text-muted">
-                                <a href="#" className="text-muted small">Clear storage</a>
+                                <Link href="#" className="text-muted small">Clear storage</Link>
 
                                 <div className="icon icon-xs">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
@@ -246,12 +247,12 @@ export default function SettingsTabPanel() {
                                 <div className="accordion accordion-flush" id="accordion-storage">
                                     <div className="accordion-item">
                                         <div className="accordion-header" id="accordion-storage-1">
-                                            <a href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-storage-body-1" aria-expanded="false" aria-controls="accordion-storage-body-1">
+                                            <Link href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-storage-body-1" aria-expanded="false" aria-controls="accordion-storage-body-1">
                                                 <div>
                                                     <h5>Cache</h5>
                                                     <p>Maximum cache size</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div id="accordion-storage-body-1" className="accordion-collapse collapse" aria-labelledby="accordion-storage-1" data-parent="#accordion-storage">
@@ -309,12 +310,12 @@ export default function SettingsTabPanel() {
                                 <div className="accordion accordion-flush" id="accordion-notifications">
                                     <div className="accordion-item">
                                         <div className="accordion-header" id="accordion-notifications-1">
-                                            <a href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-notifications-body-1" aria-expanded="false" aria-controls="accordion-notifications-body-1">
+                                            <Link href="#" className="accordion-button text-reset collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-notifications-body-1" aria-expanded="false" aria-controls="accordion-notifications-body-1">
                                                 <div>
                                                     <h5>Message</h5>
                                                     <p>Set custom notifications for users</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
 
                                         <div id="accordion-notifications-body-1" className="accordion-collapse collapse" aria-labelledby="accordion-notifications-1" data-parent="#accordion-notifications">
@@ -381,7 +382,7 @@ export default function SettingsTabPanel() {
                             <small className="text-muted me-auto">Devices</small>
 
                             <div className="flex align-items-center text-muted">
-                                <a href="#" className="text-muted small">End all sessions</a>
+                                <Link href="#" className="text-muted small">End all sessions</Link>
 
                                 <div className="icon icon-xs">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>

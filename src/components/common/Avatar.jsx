@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import DefaultImage from "./../../assets/img/default_image.png"
+import LazyImage from './LazyImage';
 
 export default function Avatar(props) {
   const As = 'div';
@@ -11,7 +12,7 @@ export default function Avatar(props) {
       )
     }
     return(
-      <img src={props?.src} alt="#" className="avatar-img" onError={(e)=>e.target.src = props?.errorImage}/>
+      <LazyImage src={props?.src} className="avatar-img" loading='lazy' onError={(e)=>e.target.src = props?.errorImage}/>
     )
   }
   

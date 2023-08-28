@@ -1,5 +1,6 @@
 import React from 'react'
 import { TabLabel } from '../common/Constant'
+import Link from '../common/Link'
 
 export default function CreateTabPanel() {
   return (
@@ -32,15 +33,15 @@ export default function CreateTabPanel() {
 
                         <ul className="nav nav-pills nav-justified" role="tablist">
                             <li className="nav-item">
-                                <a className="nav-link active" data-bs-toggle="pill" href="#create-chat-info" role="tab" aria-controls="create-chat-info" aria-selected="true">
+                                <Link className="nav-link active" data-bs-toggle="pill" href="#create-chat-info" role="tab" aria-controls="create-chat-info" aria-selected="true">
                                     Details
-                                </a>
+                                </Link>
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" data-bs-toggle="pill" href="#create-chat-members" role="tab" aria-controls="create-chat-members" aria-selected="true">
+                                <Link className="nav-link" data-bs-toggle="pill" href="#create-chat-members" role="tab" aria-controls="create-chat-members" aria-selected="true">
                                     People
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

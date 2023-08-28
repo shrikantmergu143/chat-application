@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 export function uuidV4() {
   let uuid = '', i, random;
   for (i = 0; i < 32; i++) {

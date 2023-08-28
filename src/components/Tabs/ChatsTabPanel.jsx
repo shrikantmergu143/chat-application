@@ -3,6 +3,7 @@ import { TabLabel } from '../common/Constant'
 import InputGroup from '../common/InputGroup'
 import Avatar from '../common/Avatar'
 import ChatListItem from "../common/ChatListItem"
+import Link from '../common/Link'
 
 export default function ChatsTabPanel() {
   return (
@@ -33,7 +34,7 @@ export default function ChatsTabPanel() {
                             unread={"3"}
                         />
 
-                        <a href="chat-group.html" className="card border-0 text-reset">
+                        <Link href="chat-group.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -80,11 +81,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -111,11 +112,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-empty.html" className="card border-0 text-reset">
+                        <Link href="chat-empty.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -138,11 +139,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -175,11 +176,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -202,11 +203,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -229,11 +230,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -256,11 +257,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -283,11 +284,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="#" className="card border-0 text-reset">
+                        <Link href="#" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -310,11 +311,11 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}
-                        <a href="chat-direct.html" className="card border-0 text-reset">
+                        <Link href="chat-direct.html" className="card border-0 text-reset">
                             <div className="card-body">
                                 <div className="row gx-5">
                                     <div className="col-auto">
@@ -340,7 +341,7 @@ export default function ChatsTabPanel() {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                         {/* <!-- Card --> */}
 
                         {/* <!-- Card --> */}

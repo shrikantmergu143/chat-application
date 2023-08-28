@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { uuidV4 } from '../../redux/actions/utils';

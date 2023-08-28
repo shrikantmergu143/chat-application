@@ -1,5 +1,6 @@
 import React from 'react'
 import { TabLabel } from '../common/Constant'
+import Link from '../common/Link'
 
 export default function FriendsTabPanel() {
   return (
@@ -29,13 +30,13 @@ export default function FriendsTabPanel() {
 
                         {/* <!-- Invite button --> */}
                         <div className="mt-5">
-                            <a href="#" className="btn btn-lg btn-primary w-100 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modal-invite">
+                            <Link href="#" className="btn btn-lg btn-primary w-100 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modal-invite">
                                 Find Friends
 
                                 <span className="icon ms-auto">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
                                 </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -51,35 +52,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar ">
+                                        <Link href="#" className="avatar ">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/6.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Bill Marrow</a></h5>
+                                        <h5><Link href="#">Bill Marrow</Link></h5>
                                         <p>last seen 3 days ago</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -101,35 +102,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar ">
+                                        <Link href="#" className="avatar ">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/5.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Damian Binder</a></h5>
+                                        <h5><Link href="#">Damian Binder</Link></h5>
                                         <p>last seen within a week</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -145,35 +146,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar avatar-online">
+                                        <Link href="#" className="avatar avatar-online">
                                             
                                             
                                             <span className="avatar-text">D</span>
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Don Knight</a></h5>
+                                        <h5><Link href="#">Don Knight</Link></h5>
                                         <p>online</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -195,35 +196,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar avatar-online">
+                                        <Link href="#" className="avatar avatar-online">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/8.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Elise Dennis</a></h5>
+                                        <h5><Link href="#">Elise Dennis</Link></h5>
                                         <p>online</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -245,35 +246,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar ">
+                                        <Link href="#" className="avatar ">
                                             
                                             
                                             <span className="avatar-text">M</span>
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Marshall Wallaker</a></h5>
+                                        <h5><Link href="#">Marshall Wallaker</Link></h5>
                                         <p>last seen within a month</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -289,35 +290,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar ">
+                                        <Link href="#" className="avatar ">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/11.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Mila White</a></h5>
+                                        <h5><Link href="#">Mila White</Link></h5>
                                         <p>last seen a long time ago</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -339,35 +340,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar avatar-online">
+                                        <Link href="#" className="avatar avatar-online">
                                             
                                             
                                             <span className="avatar-text">O</span>
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Ollie Chandler</a></h5>
+                                        <h5><Link href="#">Ollie Chandler</Link></h5>
                                         <p>online</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -389,35 +390,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar ">
+                                        <Link href="#" className="avatar ">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/4.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">Warren White</a></h5>
+                                        <h5><Link href="#">Warren White</Link></h5>
                                         <p>last seen recently</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -433,35 +434,35 @@ export default function FriendsTabPanel() {
 
                                 <div className="row align-items-center gx-5">
                                     <div className="col-auto">
-                                        <a href="#" className="avatar avatar-online">
+                                        <Link href="#" className="avatar avatar-online">
                                             
                                             <img className="avatar-img" src="assets/img/avatars/7.jpg" alt=""/>
                                             
                                             
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="col">
-                                        <h5><a href="#">William Wright</a></h5>
+                                        <h5><Link href="#">William Wright</Link></h5>
                                         <p>online</p>
                                     </div>
 
                                     <div className="col-auto">
                                         {/* <!-- Dropdown --> */}
                                         <div className="dropdown">
-                                            <a className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <Link className="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                                            </a>
+                                            </Link>
 
                                             <ul className="dropdown-menu">
-                                                <li><a className="dropdown-item" href="#">New message</a></li>
-                                                <li><a className="dropdown-item" href="#">Edit contact</a>
+                                                <li><Link className="dropdown-item" href="#">New message</Link></li>
+                                                <li><Link className="dropdown-item" href="#">Edit contact</Link>
                                                 </li>
                                                 <li>
                                                     <hr className="dropdown-divider"/>
                                                 </li>
                                                 <li>
-                                                    <a className="dropdown-item text-danger" href="#">Block user</a>
+                                                    <Link className="dropdown-item text-danger" href="#">Block user</Link>
                                                 </li>
                                             </ul>
                                         </div>
