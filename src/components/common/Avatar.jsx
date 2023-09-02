@@ -12,7 +12,7 @@ export default function Avatar(props) {
       )
     }
     return(
-      <LazyImage src={props?.src} className="avatar-img" loading='lazy' onError={(e)=>e.target.src = props?.errorImage}/>
+      <LazyImage src={props?.src} className="avatar-img" alt={props?.src} loading='lazy' onError={(e)=>e.target.src = props?.errorImage}/>
     )
   }
   

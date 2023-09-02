@@ -1,6 +1,6 @@
 import React from 'react'
-import TabBarComponent from './TabBarComponent'
-import SidebarComponent from './Sidebar/SidebarComponent'
+const TabBarComponent = React.lazy(()=>import('./TabBarComponent'));
+const SidebarComponent = React.lazy(()=>import('./Sidebar/SidebarComponent'));
 // import Index from "./../../assets/img/icons/index.svg";
 
 export default function DefaultLayout() {

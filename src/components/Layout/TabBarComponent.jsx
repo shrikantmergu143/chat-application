@@ -4,8 +4,8 @@ import React from 'react'
 import { TabLabel } from '../common/Constant'
 import { useDispatch, useSelector } from 'react-redux'
 import { setStoreTabState } from '../../redux/actions';
-import Icon from '../common/Icon';
-import Link from '../common/Link';
+const Icon = React.lazy(()=>import('../common/Icon'));
+const Link = React.lazy(()=>import('../common/Link'));
 
 export default function TabBarComponent() {
     const dispatch = useDispatch();

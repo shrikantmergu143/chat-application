@@ -1,5 +1,5 @@
 import React from 'react'
-import DefaultLayout from '../Layout/DefaultLayout'
+const DefaultLayout = React.lazy(()=>import('../Layout/DefaultLayout'));
 
 export default function LandingPage() {
   return (
