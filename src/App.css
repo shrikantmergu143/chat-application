@@ -91,3 +91,5 @@
 .common_icon.ChatsIcon{mask-image: url(./assets/img/icons/ChatIcon.svg);--webkit-mask-image: url(./assets/img/icons/ChatIcon.svg);}
 .common_icon.SearchIcon{mask-image: url(./assets/img/icons/SearchIcon.svg);--webkit-mask-image: url(./assets/img/icons/SearchIcon.svg);}
 .common_icon.CloseIcon{mask-image: url(./assets/img/icons/CloseIcon.svg);--webkit-mask-image: url(./assets/img/icons/CloseIcon.svg);}
+.avatar-group .avatar{z-index: 0;position: relative;}
+.avatar-group .avatar:hover{z-index: 19;position: relative;}
