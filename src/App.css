@@ -93,3 +93,17 @@
 .common_icon.CloseIcon{mask-image: url(./assets/img/icons/CloseIcon.svg);--webkit-mask-image: url(./assets/img/icons/CloseIcon.svg);}
 .avatar-group .avatar{z-index: 0;position: relative;}
 .avatar-group .avatar:hover{z-index: 19;position: relative;}
+
+.form_group .form-floating label {
+    color: var(--bs-white)!important;
+    margin-bottom: 0px;
+    user-select: none;
+}
+.form_group .form-floating>.form-control:focus,.form_group .form-floating>.form-control:not(:placeholder-shown){
+    padding-top: 1.5rem;
+    padding-bottom: 0.505rem;
+}
+.form_group .form-floating>.form-control:focus~label,.form_group .form-floating>.form-control:not(:placeholder-shown)~label,.form_group .form-floating>.form-select~label{
+    opacity: .65;
+    transform: scale(.75) translateY(-0.5rem) translateX(0.15rem);
+}

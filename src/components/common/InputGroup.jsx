@@ -22,11 +22,11 @@ export default function InputGroup(props) {
     }
     return (
         <div className={`form_group ${formClassName}`}>
-            {label &&( 
-                <label htmlFor={uuid} className='form-label text-muted'>
-                    {label}
-                </label>
-            )}
+           {label && !floatStyle &&( 
+                    <label htmlFor={uuid} className='form-label text-muted'>
+                        {label}
+                    </label>
+                )}
             <div className={`${floatStyle?"form-floating":"input-group"}`}>
                 {leftLabel && (
                     <div className="input-group-text" onClick={onClickLeftLabel}>
@@ -48,6 +48,11 @@ export default function InputGroup(props) {
                     <div className="input-group-text" onClick={onClickRightLabel}>
                         {rightLabel}
                     </div>
+                )}
+                {label && floatStyle &&( 
+                    <label htmlFor={uuid} className='form-label text-muted'>
+                        {label}
+                    </label>
                 )}
             </div>
             {error &&( 
@@ -74,7 +79,8 @@ InputGroup.propTypes = {
     size: PropTypes.any,
     iconSize: PropTypes.any,
     error: PropTypes.any,
-    // floatStyle: PropTypes.bool
+    value: PropTypes.any,
+    floatStyle: PropTypes.bool
 }
 InputGroup.defaultProps = {
     name:"",
@@ -93,5 +99,6 @@ InputGroup.defaultProps = {
     formClassName:"",
     type:"text",
     error:"",
-    floatStyle:false
+    floatStyle:false,
+    value:"",
 }
