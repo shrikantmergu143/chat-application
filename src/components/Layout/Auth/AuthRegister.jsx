@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { API_AUTH_LOGIN, App_url } from '../../common/Constant'
+import { API_AUTH_LOGIN, API_AUTH_REGISTER, App_url } from '../../common/Constant'
 import { validateEmail } from '../../common/utils';
 import { PostRequestCallAPI } from '../../common/PostRequest';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setStoreLoginUser } from '../../../redux/actions';
 const InputGroup = React.lazy(()=>import('../../common/InputGroup'))
 const Button = React.lazy(()=>import('../../common/Button'));
 
-export default function AuthLogin() {
-    const userDetails = useSelector(state=>state?.allReducers);
+export default function AuthRegister() {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         email:"",
-        password:""
+        password:"",
+        username:"",
     });
     const [errors, setErrors] = useState({
         email:"",
-        password:""
+        password:"",
+        username:"",
     });
     const onChange = (e) =>{
         let value = e.target.value
@@ -33,7 +34,6 @@ export default function AuthLogin() {
             [e.target.name]:""
         }))
     }
-    console.log("errors.email", userDetails)
     const validation = () =>{
         let value = true
         if(validateEmail(formData?.email)){
@@ -42,6 +42,14 @@ export default function AuthLogin() {
         }
         if(formData?.password === ""){
             errors.password = "Enter your password";
+            value = false
+        }
+        if(formData?.username?.length<=4){
+            errors.username = "Enter valid username";
+            value = false
+        }
+        if(formData?.username === ""){
+            errors.username = "Enter your username";
             value = false
         }
         setErrors((data)=>({
@@ -57,10 +65,10 @@ export default function AuthLogin() {
             const payload = {
                 email:formData?.email,
                 password:formData?.password,
+                username:formData?.username,
             }
-            const resp = await PostRequestCallAPI(API_AUTH_LOGIN,payload);
+            const resp = await PostRequestCallAPI(API_AUTH_REGISTER,payload);
             if(resp?.status === 200){
-                console.log("resp", resp)
                 dispatch(setStoreLoginUser(resp?.data?.userDetails));
             }else{
 
@@ -76,8 +84,8 @@ export default function AuthLogin() {
                         <form onSubmit={callSubmitForm} className="row g-6">
                             <div className="col-12">
                                 <div className="text-center">
-                                    <h3 className="fw-bold mb-2">Sign In</h3>
-                                    <p>Login to your account</p>
+                                    <h3 className="fw-bold mb-2">Sign Up</h3>
+                                    <p>Follow the easy steps</p>
                                 </div>
                             </div>
 
@@ -90,6 +98,17 @@ export default function AuthLogin() {
                                     onChange={onChange}
                                     value={formData?.email}
                                     error={errors?.email}
+                                />
+                            </div>
+                            <div className="col-12">
+                                <InputGroup
+                                    floatStyle
+                                    placeholder={"Username"}
+                                    label={"Username"}
+                                    name='username'
+                                    onChange={onChange}
+                                    value={formData?.username}
+                                    error={errors?.username}
                                 />
                             </div>
 
@@ -107,14 +126,14 @@ export default function AuthLogin() {
                             </div>
 
                             <div className="col-12">
-                                <Button className="btn btn-block w-100" onClick={callSubmitForm} variant={"primary"} size={"md"} type="submit">Sign In</Button>
+                                <Button className="btn btn-block w-100" onClick={callSubmitForm} variant={"primary"} size={"md"} type="submit">Create Account</Button>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <div className="text-center mt-8">
-                    <p>Don't have an account yet? <Link to={App_url.Register} >Sign up</Link></p>
+                    <p>Already have an account? <Link to={App_url.Login} >Sign in</Link></p>
                     <p><Link >Forgot Password?</Link></p>
                 </div>
             </div>

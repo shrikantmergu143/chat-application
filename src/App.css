@@ -107,3 +107,4 @@
     opacity: .65;
     transform: scale(.75) translateY(-0.5rem) translateX(0.15rem);
 }
+.form_group .text-danger{font-size:12px}

@@ -10,4 +10,5 @@ export const validateEmail = (email) => {
   if(!check){
     return "Enter valid email"
   }
+  return "";
 };

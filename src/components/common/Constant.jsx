@@ -1,11 +1,13 @@
 export const API_AUTH_LOGIN = "auth/login";
 export const API_AUTH_REGISTER = "auth/register";
+export const API_USER_GET = "user/get"
+export const API_GET_USERS = "friend/users"
 
 export const App_url = {
     Home:"/",
     Register:"/register",
     Login:"/login",
-    PageNotFound:"*"
+    PageNotFound:"*",
 }
 
 export const TabLabel = {
