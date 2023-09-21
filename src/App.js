@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+import 'rsuite/dist/rsuite.min.css';
 import { Navigate, Route, Routes } from 'react-router';
 import { App_url } from './components/common/Constant';
 import AuthLogin from './components/Layout/Auth/AuthLogin';
 import AuthRegister from './components/Layout/Auth/AuthRegister';
 import { useSelector } from 'react-redux';
+import './App.css';
 const LandingPage = React.lazy(()=>import('./components/Landing/LandingPage'));
 
 function App() {

@@ -1,4 +1,5 @@
 import React from 'react'
+import InviteFriendModal from '../common/modal/InviteFriendModal';
 const TabBarComponent = React.lazy(()=>import('./TabBarComponent'));
 const SidebarComponent = React.lazy(()=>import('./Sidebar/SidebarComponent'));
 // import Index from "./../../assets/img/icons/index.svg";
@@ -31,7 +32,7 @@ export default function DefaultLayout() {
           </div>
       </main>
       {/* <!-- Chat --> */}
-
+      <InviteFriendModal/>
   </div>
   )
 }

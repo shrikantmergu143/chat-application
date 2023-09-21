@@ -7,6 +7,7 @@ export const App_url = {
     Home:"/",
     Register:"/register",
     Login:"/login",
+    Message:"/message",
     PageNotFound:"*",
 }
 
