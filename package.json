@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "env-cmd": "^10.1.0",
+    "firebase": "^10.4.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,7 +35,7 @@
     "workbox-streams": "^6.6.0"
   },
   "scripts": {
-    "start": "env-cmd -f .env react-scripts start --minify",
+    "start": "env-cmd -f .env react-scripts start",
     "build": "env-cmd -f .env react-scripts build --minify",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -56,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

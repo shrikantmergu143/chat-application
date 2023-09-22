@@ -11,6 +11,7 @@ export default function FriendsTabPanel() {
     const dispatch = useDispatch();
     useEffect(()=>{
         getCallUserFriendList()
+        // eslint-disable-next-line
     },[]);
     const getCallUserFriendList =async () =>{
         const response = await GetRequestAPI(API_GET_USERS, access_token);

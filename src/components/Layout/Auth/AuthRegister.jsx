@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { API_AUTH_LOGIN, API_AUTH_REGISTER, App_url } from '../../common/Constant'
+import { API_AUTH_REGISTER, App_url } from '../../common/Constant'
 import { validateEmail } from '../../common/utils';
 import { PostRequestCallAPI } from '../../common/PostRequest';
 import { useDispatch } from 'react-redux';
 import { setStoreLoginUser } from '../../../redux/actions';
+import firebase from "firebase/compat/app"
 const InputGroup = React.lazy(()=>import('../../common/InputGroup'))
 const Button = React.lazy(()=>import('../../common/Button'));
 
@@ -58,10 +59,11 @@ export default function AuthRegister() {
         }))
         return value
     }
-    console.log(process.env.REACT_APP_BASE_API)
     const callSubmitForm = async (e) =>{
         e.preventDefault();
         if(validation()){
+            const response = await onSignUp();
+            console.log("response", response)
             const payload = {
                 email:formData?.email,
                 password:formData?.password,
@@ -75,6 +77,22 @@ export default function AuthRegister() {
             }
         }
     }
+    const onSignUp = () => {
+        const payload = {
+            email:formData?.email,
+            password:formData?.password,
+            username:formData?.username,
+        }
+        const response = firebase.auth().createUserWithEmailAndPassword(payload?.email, payload?.password)
+            .then((result) => {
+              return result;
+            })
+            .catch((error) => {
+                return error;
+            });
+        return response
+    }
+
   return (
     <div className="container">
         <div className="row align-items-center justify-content-center min-vh-100 gx-0">

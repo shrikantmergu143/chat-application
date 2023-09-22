@@ -23,6 +23,7 @@ export default function UsersList(props) {
         name.last = props?.email
         return name
     }
+    // eslint-disable-next-line
     const names = useMemo(callGetName, [props?._id]);
 
     return (

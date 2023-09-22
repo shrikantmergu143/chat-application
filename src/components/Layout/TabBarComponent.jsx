@@ -4,6 +4,8 @@ import React from 'react'
 import { TabLabel } from '../common/Constant'
 import { useDispatch, useSelector } from 'react-redux'
 import { setStoreTabState } from '../../redux/actions';
+import ImageIcon from '../common/ImageIcon';
+import Avatar from '../common/Avatar';
 const Icon = React.lazy(()=>import('../common/Icon'));
 const Link = React.lazy(()=>import('../common/Link'));
 
@@ -25,9 +27,9 @@ export default function TabBarComponent() {
     const TabListItem = ({item}) =>{
         return(
             <li className="nav-item">
-                <Link className={`nav-link py-0 py-lg-8 cursor-pointer ${activeTab == item?.clickData ?"active":""} `} id={item?.id} onClick={(e)=>onClickTab(e, item?.clickData)} title={item?.title} data-bs-toggle="tab" role="tab">
+                <Link className={`nav-link cursor-pointer ${activeTab == item?.clickData ?"active":""} `} id={item?.id} onClick={(e)=>onClickTab(e, item?.clickData)} title={item?.title} data-bs-toggle="tab" role="tab">
                     <div className={`icon icon-xl ${item?.badge && "icon-badged"}`}>
-                        <Icon className={`${item?.Icon} ${activeTab == item?.clickData ?"primary":""}`} size={"md"} />
+                        <Icon className={`${item?.Icon} ${activeTab == item?.clickData ?"primary":""}`} size={"sm"} button />
                         {item?.badge && (
                             <div className="badge badge-circle bg-primary">
                                 <span>4</span>
@@ -42,30 +44,13 @@ export default function TabBarComponent() {
     <nav className="navigation d-flex flex-column text-center navbar navbar-light hide-scrollbar">
         {/* <!-- Brand --> */}
         <Link title="Messenger" className="d-none d-xl-block mb-6">
-            <svg version="1.1" width="46px" height="46px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 46 46" enableBackground="new 0 0 46 46" >
-                <polygon opacity="0.7" points="45,11 36,11 35.5,1 "/>
-                <polygon points="35.5,1 25.4,14.1 39,21 "/>
-                <polygon opacity="0.4" points="17,9.8 39,21 17,26 "/>
-                <polygon opacity="0.7" points="2,12 17,26 17,9.8 "/>
-                <polygon opacity="0.7" points="17,26 39,21 28,36 "/>
-                <polygon points="28,36 4.5,44 17,26 "/>
-                <polygon points="17,26 1,26 10.8,20.1 "/>
-            </svg>
+            <ImageIcon className={"Logo primary"} size={"xl"}/>
 
         </Link>
 
         {/* <!-- Nav items --> */}
+        <div className='tabs-nav'>
         <ul className="d-flex nav navbar-nav flex-row flex-xl-column flex-grow-1 justify-content-between justify-content-xl-center align-items-center w-100 py-4 py-lg-2 px-lg-3" role="tablist">
-            {/* <!-- Invisible item to center nav vertically --> */}
-            <li className="nav-item d-none d-xl-block invisible flex-xl-grow-1">
-                <Link className="nav-link py-0 py-lg-8" href="#" title="">
-                    <div className="icon icon-xl">
-                        <Icon className={"CloseIcon"} />
-                    </div>
-                </Link>
-            </li>
-
-            {/* <!-- New chat --> */}
             {TabBarList?.map((item, index)=>(
                 <TabListItem item={item} key={index} />
             ))}
@@ -129,14 +114,15 @@ export default function TabBarComponent() {
             </li> */}
 
             {/* <!-- Profile --> */}
-            {/* <li className="nav-item d-none d-xl-block">
-                <Link href="#" className="nav-link p-0 mt-lg-2" data-bs-toggle="modal" data-bs-target="#modal-profile">
-                    <div className="avatar avatar-online mx-auto">
-                        <img className="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
-                    </div>
-                </Link>
-            </li> */}
+           
         </ul>
+        </div>
+
+        <li className="nav-item d-none d-xl-block">
+                <Link href="#" className="nav-link p-0 mt-lg-2" data-bs-toggle="modal" data-bs-target="#modal-profile">
+                   <Avatar className={"avatar avatar-online mx-auto"}/>
+                </Link>
+            </li>
     </nav>
   )
 }
