@@ -109,3 +109,19 @@
 }
 .form_group .text-danger{font-size:12px}
 a:active, a:focus, a:hover{text-decoration: none;}
+
+.modal-content, .rs-modal-content {
+    box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: 0 solid var(--bs-gray-dark);
+    border-radius: 0.8rem;
+    outline: 0;
+    padding: 0px;
+}
+.rs-modal-body{margin-top: 0px;}
