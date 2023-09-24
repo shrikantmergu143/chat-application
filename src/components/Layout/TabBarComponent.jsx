@@ -25,6 +25,7 @@ export default function TabBarComponent() {
             { title:"Settings", Icon:"SettingIcon", id:"tab-settings", badge:"", clickData:TabLabel?.SettingsTabPanel},
         ];
     }
+    // eslint-disable-next-line
     const TabBarList = useMemo(getTabList, [activeTab])
     const TabListItem = ({item}) =>{
         return(

@@ -6,10 +6,9 @@ import { App_url } from './components/common/Constant';
 import { useSelector } from 'react-redux';
 import './App.css';
 import firebase from "firebase/compat/app"
-const Toaster = React.lazy(()=>import('./components/common/Toaster'));
-const LandingPage = React.lazy(()=>import('./components/Landing/LandingPage'));
-const AuthLogin = React.lazy(()=>import('./components/Layout/Auth/AuthLogin'));
-const AuthRegister = React.lazy(()=>import('./components/Layout/Auth/AuthRegister'));
+import AuthLogin from'./components/Layout/Auth/AuthLogin'
+import AuthRegister from './components/Layout/Auth/AuthRegister'
+import LandingPage from './components/Landing/LandingPage'
 
 function App() {
   const {access_token} = useSelector(state=>state?.allReducers);
@@ -32,7 +31,7 @@ function App() {
           </React.Fragment>
         )}
       </Routes>
-      <Toaster/>
+      {/* <Toaster/> */}
     </React.Fragment>
   );
 }

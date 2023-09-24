@@ -4,7 +4,7 @@
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 48x48 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon"
     },
     {
@@ -18,9 +18,9 @@
       "sizes": "144x144"
     },
     {
-      "src": "logo512.webp",
+      "src": "Logo.svg",
       "type": "image/webp",
-      "sizes": "144x144"
+      "sizes": "150x150"
     }
   ],
   "start_url": ".",
