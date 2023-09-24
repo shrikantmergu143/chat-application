@@ -1,13 +1,12 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useMemo } from 'react'
 import { TabLabel } from '../common/Constant'
 import { useDispatch, useSelector } from 'react-redux'
-import { setStoreTabState } from '../../redux/actions';
-import ImageIcon from '../common/ImageIcon';
+import { setStoreLoginUser, setStoreTabState } from '../../redux/actions';
 import Avatar from '../common/Avatar';
-const Icon = React.lazy(()=>import('../common/Icon'));
-const Link = React.lazy(()=>import('../common/Link'));
+import Icon from '../common/Icon';
+import Link from '../common/Link';
 
 export default function TabBarComponent() {
     const dispatch = useDispatch();
@@ -17,19 +16,22 @@ export default function TabBarComponent() {
         e.preventDefault();
         dispatch(setStoreTabState(state))
     }
-    const TabBarList = [
-        { title:"Create Chat", Icon:"EditIcon", id:"tab-create-chat", badge:"", clickData:TabLabel?.CreateTabPanel},
-        { title:"Friends", Icon:"UsersIcon", id:"tab-friends", badge:"", clickData:TabLabel?.FriendsTabPanel},
-        { title:"Chats", Icon:"ChatsIcon", id:"tab-chats", badge:"4", clickData:TabLabel?.ChatsTabPanel},
-        { title:"Notifications", Icon:"NotificationIcon", id:"tab-notifications", badge:"", clickData:TabLabel?.NotificationsTabPanel},
-        { title:"Settings", Icon:"SettingIcon", id:"tab-settings", badge:"", clickData:TabLabel?.SettingsTabPanel},
-    ];
+    const getTabList = () =>{
+        return [
+            // { title:"Create Chat", Icon:"EditIcon", id:"tab-create-chat", badge:"", clickData:TabLabel?.CreateTabPanel},
+            { title:"Chats", Icon:"ChatsIcon", id:"tab-chats", badge:"4", clickData:TabLabel?.ChatsTabPanel},
+            { title:"Friends", Icon:"UsersIcon", id:"tab-friends", badge:"", clickData:TabLabel?.FriendsTabPanel},
+            { title:"Notifications", Icon:"NotificationIcon", id:"tab-notifications", badge:"", clickData:TabLabel?.NotificationsTabPanel},
+            { title:"Settings", Icon:"SettingIcon", id:"tab-settings", badge:"", clickData:TabLabel?.SettingsTabPanel},
+        ];
+    }
+    const TabBarList = useMemo(getTabList, [activeTab])
     const TabListItem = ({item}) =>{
         return(
             <li className="nav-item">
                 <Link className={`nav-link cursor-pointer ${activeTab == item?.clickData ?"active":""} `} id={item?.id} onClick={(e)=>onClickTab(e, item?.clickData)} title={item?.title} data-bs-toggle="tab" role="tab">
                     <div className={`icon icon-xl ${item?.badge && "icon-badged"}`}>
-                        <Icon className={`${item?.Icon} ${activeTab == item?.clickData ?"primary":""}`} size={"sm"} button />
+                        <Icon onClick={(e)=>onClickTab(e, item?.clickData)} circle className={`${item?.Icon} ${activeTab == item?.clickData ?"primary":""}`} size={"sm"} button />
                         {item?.badge && (
                             <div className="badge badge-circle bg-primary">
                                 <span>4</span>
@@ -40,13 +42,20 @@ export default function TabBarComponent() {
             </li>
         )
     }
+    const callLogOut = (e) =>{
+        e.preventDefault();
+        dispatch(setStoreLoginUser(""))
+    }
   return (
     <nav className="navigation d-flex flex-column text-center navbar navbar-light hide-scrollbar">
         {/* <!-- Brand --> */}
-        <Link title="Messenger" className="d-none d-xl-block mb-6">
+        {/* <Link title="Messenger" className="d-none d-xl-block mb-6">
             <ImageIcon className={"Logo primary"} size={"xl"}/>
 
-        </Link>
+        </Link> */}
+         <Link href="#" className="nav-link p-0 mt-lg-2" data-bs-toggle="modal" data-bs-target="#modal-profile">
+                   <Avatar className={"avatar avatar-online mx-auto"}/>
+                </Link>
 
         {/* <!-- Nav items --> */}
         <div className='tabs-nav'>
@@ -118,11 +127,9 @@ export default function TabBarComponent() {
         </ul>
         </div>
 
-        <li className="nav-item d-none d-xl-block">
-                <Link href="#" className="nav-link p-0 mt-lg-2" data-bs-toggle="modal" data-bs-target="#modal-profile">
-                   <Avatar className={"avatar avatar-online mx-auto"}/>
-                </Link>
-            </li>
+        <Link  className="nav-link p-0 mt-lg-2" onClick={callLogOut}>
+            <Icon className={"SignOutIcon"}/>
+        </Link>
     </nav>
   )
 }

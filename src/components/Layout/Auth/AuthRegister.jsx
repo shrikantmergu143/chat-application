@@ -9,7 +9,7 @@ import firebase from "firebase/compat/app"
 const InputGroup = React.lazy(()=>import('../../common/InputGroup'))
 const Button = React.lazy(()=>import('../../common/Button'));
 
-export default function AuthRegister() {
+function AuthRegister() {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         email:"",
@@ -63,17 +63,19 @@ export default function AuthRegister() {
         e.preventDefault();
         if(validation()){
             const response = await onSignUp();
-            console.log("response", response)
-            const payload = {
-                email:formData?.email,
-                password:formData?.password,
-                username:formData?.username,
-            }
-            const resp = await PostRequestCallAPI(API_AUTH_REGISTER,payload);
-            if(resp?.status === 200){
-                dispatch(setStoreLoginUser(resp?.data?.userDetails));
-            }else{
+            if(response?.status){
+                console.log("response", response)
+                const payload = {
+                    email:formData?.email,
+                    password:formData?.password,
+                    username:formData?.username,
+                }
+                const resp = await PostRequestCallAPI(API_AUTH_REGISTER,payload);
+                if(resp?.status === 200){
+                    dispatch(setStoreLoginUser(resp?.data?.userDetails));
+                }else{
 
+                }
             }
         }
     }
@@ -84,12 +86,12 @@ export default function AuthRegister() {
             username:formData?.username,
         }
         const response = firebase.auth().createUserWithEmailAndPassword(payload?.email, payload?.password)
-            .then((result) => {
-              return result;
-            })
-            .catch((error) => {
-                return error;
-            });
+        .then((result) => {
+            return {data:result, status:true};
+          })
+          .catch((error) => {
+              return {error:error, status:false};
+          });
         return response
     }
 
@@ -144,7 +146,7 @@ export default function AuthRegister() {
                             </div>
 
                             <div className="col-12">
-                                <Button className="btn btn-block w-100" onClick={callSubmitForm} variant={"primary"} size={"md"} type="submit">Create Account</Button>
+                                <Button className=" w-100" onClick={callSubmitForm} variant={"primary"} type="submit">Create Account</Button>
                             </div>
                         </form>
                     </div>
@@ -159,3 +161,4 @@ export default function AuthRegister() {
     </div>
   )
 }
+export default React.memo(AuthRegister)

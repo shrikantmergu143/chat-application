@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from "prop-types"
-
+import {Button as CommonButton} from 'rsuite';
 export default function Button(props) {
   return (
-    <button className={`btn btn-block btn-${props?.size} btn-${props?.variant} ${props?.className}`} onClick={props?.onClick} type={props?.type} >
+    <CommonButton appearance={props?.variant} size={props?.size} className={` ${props?.className}`} onClick={props?.onClick} type={props?.type} >
       {props?.children}
-    </button>
+    </CommonButton>
   )
 }
 Button.propTypes = {
@@ -16,7 +16,7 @@ Button.propTypes = {
     onClick: PropTypes.func,
 }
 Button.defaultProps = {
-    size: "md",
+    size: "lg",
     type: "button",
     className: "",
     variant: "",
