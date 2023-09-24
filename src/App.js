@@ -9,6 +9,7 @@ import firebase from "firebase/compat/app"
 import AuthLogin from'./components/Layout/Auth/AuthLogin'
 import AuthRegister from './components/Layout/Auth/AuthRegister'
 import LandingPage from './components/Landing/LandingPage'
+import CommonInitial from "./components/common/CommonInitial"
 
 function App() {
   const {access_token} = useSelector(state=>state?.allReducers);
@@ -31,7 +32,7 @@ function App() {
           </React.Fragment>
         )}
       </Routes>
-      {/* <Toaster/> */}
+      <CommonInitial/>
     </React.Fragment>
   );
 }

@@ -19,7 +19,7 @@ export default function TabBarComponent() {
     const getTabList = () =>{
         return [
             // { title:"Create Chat", Icon:"EditIcon", id:"tab-create-chat", badge:"", clickData:TabLabel?.CreateTabPanel},
-            { title:"Chats", Icon:"ChatsIcon", id:"tab-chats", badge:"4", clickData:TabLabel?.ChatsTabPanel},
+            { title:"Chats", Icon:"ChatsIcon", id:"tab-chats",  clickData:TabLabel?.ChatsTabPanel},
             { title:"Friends", Icon:"UsersIcon", id:"tab-friends", badge:"", clickData:TabLabel?.FriendsTabPanel},
             { title:"Notifications", Icon:"NotificationIcon", id:"tab-notifications", badge:"", clickData:TabLabel?.NotificationsTabPanel},
             { title:"Settings", Icon:"SettingIcon", id:"tab-settings", badge:"", clickData:TabLabel?.SettingsTabPanel},
@@ -54,7 +54,7 @@ export default function TabBarComponent() {
             <ImageIcon className={"Logo primary"} size={"xl"}/>
 
         </Link> */}
-         <Link href="#" className="nav-link p-0 mt-lg-2" data-bs-toggle="modal" data-bs-target="#modal-profile">
+         <Link href="#" className="nav-link p-0 mt-lg-2 hide-tab" data-bs-toggle="modal" data-bs-target="#modal-profile">
                    <Avatar className={"avatar avatar-online mx-auto"}/>
                 </Link>
 
@@ -128,8 +128,8 @@ export default function TabBarComponent() {
         </ul>
         </div>
 
-        <Link  className="nav-link p-0 mt-lg-2" onClick={callLogOut}>
-            <Icon className={"SignOutIcon"}/>
+        <Link  className="nav-link p-0 mt-lg-2  hide-tab" onClick={callLogOut}>
+            <Icon className={"SignOutIcon danger"}/>
         </Link>
     </nav>
   )

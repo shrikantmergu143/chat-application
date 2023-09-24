@@ -4,18 +4,11 @@ const TabBarComponent = React.lazy(()=>import('./TabBarComponent'));
 const SidebarComponent = React.lazy(()=>import('./Sidebar/SidebarComponent'));
 // import Index from "./../../assets/img/icons/index.svg";
 
-export default function DefaultLayout() {
+function DefaultLayout() {
   return (
     <div className="layout overflow-hidden">
-      {/* <!-- Navigation --> */}
       <TabBarComponent/>
-      {/* <!-- Navigation --> */}
-
-      {/* <!-- Sidebar --> */}
       <SidebarComponent/>
-      {/* <!-- Sidebar --> */}
-
-      {/* <!-- Chat --> */}
       <main className="main">
           <div className="container h-100">
 
@@ -31,8 +24,8 @@ export default function DefaultLayout() {
 
           </div>
       </main>
-      {/* <!-- Chat --> */}
       <InviteFriendModal/>
   </div>
   )
 }
+export default React.memo(DefaultLayout);
