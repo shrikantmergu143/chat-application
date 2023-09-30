@@ -10,6 +10,7 @@ export default function CommonInitial() {
     if(access_token){
         callGetUserDetails();
     }
+    // eslint-disable-next-line 
   },[access_token]);
 
   const callGetUserDetails =async () =>{

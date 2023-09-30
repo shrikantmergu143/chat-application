@@ -81,6 +81,7 @@
 }
 .w-nowrap{white-space: nowrap;}
 .cursor-pointer{cursor: pointer;}
+.common_icon.font-xsm, .common_image.font-xsm{--icon-font:calc(var(--icon-font-sm) - 3px)}
 .common_icon.font-sm, .common_image.font-sm{--icon-font:var(--icon-font-sm)}
 .common_icon.font-md, .common_image.font-md{--icon-font:var(--icon-font-md)}
 .common_icon.font-lg, .common_image.font-lg{--icon-font:var(--icon-font-lg)}
@@ -89,6 +90,7 @@
 .common_icon, .common_image{mask-position: center;-webkit-mask-position: center;mask-repeat: no-repeat;-webkit-mask-repeat: no-repeat;mask-size: contain;-webkit-mask-size: contain;background-color: var(--text-color);height: var(--icon-font);width: var(--icon-font);display: inline-block;position: relative;}
 .common_icon.primary, .common_image.primary{--text-color:var(--text-primary-color)}
 .common_icon.danger, .common_image.danger{--text-color:var(--rs-red-700)}
+.common_icon.UploadIcon{mask-image: url(./assets/img/icons/UploadIcon.svg);--webkit-mask-image: url(./assets/img/icons/UploadIcon.svg);}
 .common_icon.EditIcon{mask-image: url(./assets/img/icons/EditIcon.svg);--webkit-mask-image: url(./assets/img/icons/EditIcon.svg);}
 .common_icon.CloseIcon{mask-image: url(./assets/img/icons/CloseIcon.svg);--webkit-mask-image: url(./assets/img/icons/CloseIcon.svg);}
 .common_icon.UsersIcon{mask-image: url(./assets/img/icons/UsersIcon.svg);--webkit-mask-image: url(./assets/img/icons/UsersIcon.svg);}
@@ -222,4 +224,7 @@ a:active, a:focus, a:hover{text-decoration: none;}
     --icon-font-xl: 30px;
     --icon-font-xxl: 40px;
    }
+   .navigation .rs-btn-icon.rs-btn i{height: 22px;width: 22px;}
+   .navigation .rs-btn-icon.rs-btn i.UsersIcon{height: 18px;width: 28px;}
+   .sidebar{max-height:100%;height: 100vh;padding-bottom: 80px;}
 }

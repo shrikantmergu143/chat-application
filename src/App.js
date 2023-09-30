@@ -13,7 +13,7 @@ import CommonInitial from "./components/common/CommonInitial"
 
 function App() {
   const {access_token} = useSelector(state=>state?.allReducers);
-  console.log("firebase", firebase.auth())
+  console.log("firebase", firebase)
 
   return (
     <React.Fragment>

@@ -16,6 +16,7 @@ export default function FriendsTabPanel() {
     const getCallUserFriendList =async () =>{
         const response = await GetRequestAPI(API_GET_USERS, access_token);
         if(response?.status === 200){
+            console.log("response?.data?.data", response?.data?.data)
             dispatch(setStoreUsersList(response?.data?.data))
         }else{
             dispatch(setStoreUsersList([]))
@@ -26,7 +27,7 @@ export default function FriendsTabPanel() {
         const grouped = [];
         if(usersList){
             usersList?.forEach(obj => {
-                const firstLetter = obj.username.charAt(0).toUpperCase();
+                const firstLetter = obj?.username?.charAt(0).toUpperCase();
                 const groupIndex = grouped.findIndex(item => item.letter === firstLetter);
     
                 if (groupIndex === -1) {
@@ -45,7 +46,7 @@ export default function FriendsTabPanel() {
         }
     }
     const GetUserGroupList = useMemo(getListGroup, [usersList]);
-    console.log("GetUserGroupList", GetUserGroupList)
+    console.log("GetUserGroupList", GetUserGroupList, usersList)
   return (
     <div className="tab-pane fade h-100 show active" id={TabLabel?.FriendsTabPanel} role="tabpanel">
         <div className="d-flex flex-column h-100">

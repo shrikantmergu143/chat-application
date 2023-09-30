@@ -1,8 +1,44 @@
 import React from 'react'
 import { TabLabel } from '../common/Constant'
 import Link from '../common/Link'
+import Icon from '../common/Icon';
+import firebase from 'firebase/compat/app';
 
 export default function SettingsTabPanel() {
+    const onUploadFile =async (e) =>{
+        if(e.target.files && e.target.files[0]){
+            const uri = e.target.files[0];
+            const childPath = `photo/${firebase.auth().currentUser.uid}/${Math.random().toString(36)}`;
+            console.log(childPath)
+    
+            const response = await fetch(uri);
+            const blob = await response.blob();
+            console.log("blob", blob)
+    
+            // const task = firebase
+            //     .storage()
+            //     .ref()
+            //     .child(childPath)
+            //     .put(blob);
+    
+            // const taskProgress = snapshot => {
+            //     console.log(`transferred: ${snapshot.bytesTransferred}`)
+            // }
+    
+            // const taskCompleted = () => {
+            //     task.snapshot.ref.getDownloadURL().then((snapshot) => {
+            //         console.log(snapshot);
+            //         console.log(snapshot)
+            //     })
+            // }
+    
+            // const taskError = snapshot => {
+            //     console.log(snapshot)
+            // }
+    
+            // task.on("state_changed", taskProgress, taskError, taskCompleted);
+        }
+    }
   return (
     <div className="tab-pane fade h-100 show active" id={TabLabel?.SettingsTabPanel} role="tabpanel">
         <div className="d-flex flex-column h-100">
@@ -33,9 +69,9 @@ export default function SettingsTabPanel() {
                                         <img src="assets/img/avatars/1.jpg" alt="#" className="avatar-img"/>
 
                                         <div className="badge badge-circle bg-secondary border-outline position-absolute bottom-0 end-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                            <Icon className={"UploadIcon"} size={'xsm'}/>
                                         </div>
-                                        <input id="upload-profile-photo" className="d-none" type="file"/>
+                                        <input id="upload-profile-photo" className="d-none" type="file" onChange={onUploadFile} />
                                         <label className="stretched-label mb-0" for="upload-profile-photo"></label>
                                     </div>
                                 </div>
