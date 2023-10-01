@@ -7,8 +7,22 @@ export const initialData = {
     activeTab: TabLabel?.ChatsTabPanel,
     userDetails:{},
     access_token:"",
-    usersList:[],
-    toast:[],
+    usersList:{
+        data:[],
+        page:1,
+        pageSize:10
+    },
+    toast:{message:"", type:""},
+    ReceivedFriend:{
+        data:[],
+        page:1,
+        pageSize:10
+    },
+    ModalPopup:{
+        show:"",
+        data:null,
+        callBackModal:()=>{},
+    }
 }
 
 export const allReducers = (state = initialData, action) => {
@@ -38,28 +52,20 @@ export const allReducers = (state = initialData, action) => {
                 ...state,
                 toast:[]
             }
-        case ActionTypes?.SET_STORE_TOASTER_LISTS:
-            const toaster = [];
-            if(action?.payload?.id){
-                state?.toast?.map((item)=>{
-                    if(item?.id !== action?.payload?.id){
-                        toaster?.push(item)
-                    }
-                })
-            }else{
-                const data = state?.toast?.filter((item)=>item?.title==action?.payload?.title);
-                state?.toast?.map((item)=>toaster?.push(item));
-                if(data?.length === 0){
-                    const uid = actions.generateUUID();
-                    toaster?.push({
-                        ...action?.payload,
-                        id:uid,
-                    })
-                }
-            }
+        case ActionTypes?.SET_STORE_RECEIVED_FRIEND_REQUEST:
             return{
                 ...state,
-                toast:toaster
+                ReceivedFriend:action?.payload,
+            }
+        case ActionTypes?.SET_SHOW_MODAL:
+            return{
+                ...state,
+                ModalPopup:action?.payload?action?.payload:initialData.ModalPopup,
+            }
+        case ActionTypes?.SET_STORE_TOASTER_LISTS:
+            return{
+                ...state,
+                toast:action?.payload
             }
         default:
         return state;

@@ -24,21 +24,20 @@ export default function UsersList(props) {
         return name
     }
     // eslint-disable-next-line
-    const names = useMemo(callGetName, [props?._id]);
-    console.log("props", props)
+    const names = useMemo(callGetName, [props?.friend_id]);
 
     return (
         <div className="card border-0">
             <div className="card-body">
                 <div className="row align-items-center gx-5">
                     <div className="col-auto">
-                        <Link to={`${App_url?.Message}/${props?._id}`}>
+                        <Link to={`${App_url?.Message}/${props?.friend_id}`}>
                             <Avatar text={names?.text} src={""} />
                         </Link>
                     </div>
 
                     <div className="col">
-                        <h5><Link to={`${App_url?.Message}/${props?._id}`}>{names?.first}</Link></h5>
+                        <h5><Link to={`${App_url?.Message}/${props?.friend_id}`}>{names?.first}</Link></h5>
                         <p>{names?.last}</p>
                     </div>
 

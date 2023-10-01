@@ -10,6 +10,8 @@ import AuthLogin from'./components/Layout/Auth/AuthLogin'
 import AuthRegister from './components/Layout/Auth/AuthRegister'
 import LandingPage from './components/Landing/LandingPage'
 import CommonInitial from "./components/common/CommonInitial"
+import Toaster from './components/common/Toaster';
+import MessagePage from './components/Message/MessagePage';
 
 function App() {
   const {access_token} = useSelector(state=>state?.allReducers);
@@ -28,11 +30,13 @@ function App() {
         {access_token &&(
           <React.Fragment>
             <Route exact path={App_url.Home}  element={<LandingPage/>} />
+            <Route exact path={`${App_url.Message}/:friend_id`}  element={<MessagePage/>} />
             <Route exact path={App_url.PageNotFound}  element={<LandingPage/>} />
           </React.Fragment>
         )}
       </Routes>
       <CommonInitial/>
+        <Toaster/>
     </React.Fragment>
   );
 }
