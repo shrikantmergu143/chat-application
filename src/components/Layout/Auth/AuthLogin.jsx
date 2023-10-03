@@ -4,7 +4,7 @@ import { API_AUTH_LOGIN, App_url } from '../../common/Constant'
 import { validateEmail } from '../../common/utils';
 import { PostRequestCallAPI } from '../../common/PostRequest';
 import { useDispatch } from 'react-redux';
-import { setStoreLoginUser } from '../../../redux/actions';
+import { setShowToast, setStoreLoginUser } from '../../../redux/actions';
 import firebase from "firebase/compat/app"
 const InputGroup = React.lazy(()=>import('../../common/InputGroup'))
 const Button = React.lazy(()=>import('../../common/Button'));
@@ -66,10 +66,11 @@ function AuthLogin() {
                     dispatch(setStoreLoginUser(resp?.data?.userDetails));
                     navigate(App_url.Home)
                 }else{
-
+                dispatch(setShowToast({message:"Invalid credentials", type:"info"}));
                 }
+            }else{
+                dispatch(setShowToast({message:"Invalid credentials", type:"info"}));
             }
-            console.log("response", response)
         }
     }
     const onSignIn = () => {
