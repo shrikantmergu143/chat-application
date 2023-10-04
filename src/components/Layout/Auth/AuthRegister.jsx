@@ -4,7 +4,7 @@ import { API_AUTH_REGISTER, App_url } from '../../common/Constant'
 import { validateEmail } from '../../common/utils';
 import { PostRequestCallAPI } from '../../common/PostRequest';
 import { useDispatch } from 'react-redux';
-import { setStoreLoginUser } from '../../../redux/actions';
+import { setShowToast, setStoreLoginUser } from '../../../redux/actions';
 import firebase from "firebase/compat/app"
 const InputGroup = React.lazy(()=>import('../../common/InputGroup'))
 const Button = React.lazy(()=>import('../../common/Button'));
@@ -15,11 +15,15 @@ function AuthRegister() {
         email:"",
         password:"",
         username:"",
+        first_name:"",
+        last_name:"",
     });
     const [errors, setErrors] = useState({
         email:"",
         password:"",
         username:"",
+        first_name:"",
+        last_name:"",
     });
     const onChange = (e) =>{
         let value = e.target.value
@@ -53,6 +57,14 @@ function AuthRegister() {
             errors.username = "Enter your username";
             value = false
         }
+        if(formData?.first_name === ""){
+            errors.first_name = "Enter your first name";
+            value = false
+        }
+        if(formData?.last_name === ""){
+            errors.last_name = "Enter your last name";
+            value = false
+        }
         setErrors((data)=>({
             ...data,
             ...errors
@@ -69,6 +81,8 @@ function AuthRegister() {
                     email:formData?.email,
                     password:formData?.password,
                     username:formData?.username,
+                    last_name:formData?.last_name,
+                    first_name:formData?.first_name,
                 }
                 const resp = await PostRequestCallAPI(API_AUTH_REGISTER,payload);
                 if(resp?.status === 200){
@@ -76,6 +90,9 @@ function AuthRegister() {
                 }else{
 
                 }
+            }else{
+                console.log("response", response?.status)
+                dispatch(setShowToast({message:"The email is already in use by another account", type:"info"}));
             }
         }
     }
@@ -109,6 +126,28 @@ function AuthRegister() {
                                 </div>
                             </div>
 
+                            <div className="col-12">
+                                <InputGroup
+                                    floatStyle
+                                    placeholder={"First Name"}
+                                    label={"First Name"}
+                                    name='first_name'
+                                    onChange={onChange}
+                                    value={formData?.first_name}
+                                    error={errors?.first_name}
+                                />
+                            </div>
+                            <div className="col-12">
+                                <InputGroup
+                                    floatStyle
+                                    placeholder={"Last Name"}
+                                    label={"Last Name"}
+                                    name='last_name'
+                                    onChange={onChange}
+                                    value={formData?.last_name}
+                                    error={errors?.last_name}
+                                />
+                            </div>
                             <div className="col-12">
                                 <InputGroup
                                     floatStyle

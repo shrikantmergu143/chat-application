@@ -4,7 +4,7 @@ import { Message, useToaster } from 'rsuite';
 import { setShowToast } from '../../redux/actions';
 import { initialData } from '../../redux/reducers/allReducers';
 
-export default function Toaster() {
+function Toaster() {
   const toast = useSelector((state)=>state?.allReducers?.toast);
   const Toaster = useToaster();
   const dispatch = useDispatch(); 
@@ -33,3 +33,4 @@ export default function Toaster() {
     </div>
   )
 }
+export default React.memo(Toaster);

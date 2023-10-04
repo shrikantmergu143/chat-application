@@ -10,7 +10,6 @@ import AuthLogin from'./components/Layout/Auth/AuthLogin'
 import AuthRegister from './components/Layout/Auth/AuthRegister'
 import LandingPage from './components/Landing/LandingPage'
 import CommonInitial from "./components/common/CommonInitial"
-import Toaster from './components/common/Toaster';
 import MessagePage from './components/Message/MessagePage';
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
         )}
       </Routes>
       <CommonInitial/>
-        <Toaster/>
     </React.Fragment>
   );
 }
