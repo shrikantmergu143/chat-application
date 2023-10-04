@@ -4,9 +4,8 @@
 const CACHE_NAME = 'Messenger';
 const urlsToCache = [
   '/',
+  '/icons.json',
   '/index.html',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
   // Add more URLs to cache here
 ];
 
