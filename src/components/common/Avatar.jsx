@@ -8,7 +8,7 @@ export default function Avatar(props) {
   const AvatarLoad = () =>{
     if(props?.text){
       return(
-        <span className="avatar-text">{props?.text}</span>
+        <span className="avatar-text">{props?.text?.charAt(0)}</span>
       )
     }
     return(

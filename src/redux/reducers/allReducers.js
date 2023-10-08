@@ -22,7 +22,8 @@ export const initialData = {
         show:"",
         data:null,
         callBackModal:()=>{},
-    }
+    },
+    openFriendDetails:{friend_id:""}
 }
 
 export const allReducers = (state = initialData, action) => {
@@ -66,6 +67,17 @@ export const allReducers = (state = initialData, action) => {
             return{
                 ...state,
                 toast:action?.payload
+            }
+        case ActionTypes?.SET_STORE_OPEN_FRIEND_DETAILS:
+            if(!action?.payload){
+                return{
+                    ...state,
+                    openFriendDetails:initialData?.openFriendDetails
+                }
+            }
+            return{
+                ...state,
+                openFriendDetails:action?.payload
             }
         default:
         return state;

@@ -16,6 +16,7 @@ export default function FriendsTabPanel() {
     },[]);
     const getCallUserFriendList =async () =>{
         const response = await GetRequestAPI(API_ACCEPTED_FRIENDS, access_token);
+        // console.log("response", response)
         if(response?.status === 200){
             dispatch(setStoreUsersList(response?.data))
         }else{
