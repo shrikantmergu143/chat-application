@@ -8,6 +8,7 @@ export const ActionTypes = {
     SET_SHOW_MODAL:"SET_SHOW_MODAL",
     SET_STORE_OPEN_FRIEND_DETAILS:"SET_STORE_OPEN_FRIEND_DETAILS",
     SET_STORE_CHAT_LIST:"SET_STORE_CHAT_LIST",
+    SET_STORE_MESSAGE_ITEM_LIST:"SET_STORE_MESSAGE_ITEM_LIST",
 }
 export const setStoreTabState = (payload) =>{
     return{ type:ActionTypes?.SET_STORE_CURRENT_TAB_STATE, payload:payload }  //User Login
@@ -41,4 +42,7 @@ export const setStoreOpenFriendDetails = (payload) =>{
 }
 export const setStoreChatList = (payload) =>{ // use to set empty toast list if is found undefined
     return { type:ActionTypes?.SET_STORE_CHAT_LIST, payload:payload, }
+}
+export const setStoreMessageItemList = (payload) =>{ // use to set empty toast list if is found undefined
+    return { type:ActionTypes?.SET_STORE_MESSAGE_ITEM_LIST, payload:payload, }
 }
