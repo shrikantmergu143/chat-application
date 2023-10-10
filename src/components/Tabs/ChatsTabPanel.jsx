@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { API_GET_CHAT_LIST, TabLabel } from '../common/Constant'
 import InputGroup from '../common/InputGroup'
-import Avatar from '../common/Avatar'
+// import Avatar from '../common/Avatar'
 import ChatListItem from "../common/ChatListItem"
-import Link from '../common/Link'
+// import Link from '../common/Link'
 import { GetRequestAPI } from '../common/GetRequest'
 import { useDispatch, useSelector } from 'react-redux'
 import { setStoreChatList } from '../../redux/actions'
@@ -28,7 +28,7 @@ export default function ChatsTabPanel() {
             dispatch(setStoreChatList(initialData?.chatList));
         }
     }
-    console.log("chatList", chatList)
+
   return (
     <div className="tab-pane fade h-100 show active" id={TabLabel?.ChatsTabPanel} role="tabpanel">
         <div className="d-flex flex-column h-100 position-relative">

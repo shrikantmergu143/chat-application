@@ -5,12 +5,15 @@ import { useNavigate, useParams } from 'react-router';
 import { API_GET_FRIEND_DETAILS, API_GET_MESSAGES, App_url } from '../common/Constant';
 import { GetRequestAPI } from '../common/GetRequest';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStoreOpenFriendDetails } from '../../redux/actions';
+import { setStoreMessageItemList, setStoreOpenFriendDetails } from '../../redux/actions';
 import MessageHeader from './MessageHeader';
+import MessageContent from './MessageContent';
 
 export default function MessagePage() {
     const params = useParams();
-    const { access_token, openFriendDetails } = useSelector((state)=>state?.allReducers);
+    const { access_token, openFriendDetails, MessageList } = useSelector((state)=>state?.allReducers);
+    const Message = MessageList[params?.friend_id];
+    // console.log("MessageList", MessageList)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     useEffect(()=>{
@@ -39,11 +42,11 @@ export default function MessagePage() {
         const url = `${API_GET_MESSAGES}/${FriendId}/get_message`;
         const response = await GetRequestAPI(url, access_token);
         console.log("response", response)
-        // if(response?.status === 200){
-        //     dispatch(setStoreMessageItemList({data:response?.data, friend_id:FriendId}))
-        // }else{
-        //     dispatch(setStoreMessageItemList({friend_id:FriendId, data:{} }))
-        // }
+        if(response?.status === 200){
+            dispatch(setStoreMessageItemList({data:response?.data?.data, friend_id:FriendId}))
+        }else{
+            dispatch(setStoreMessageItemList({friend_id:FriendId, data:[] }))
+        }
     }
     // console.log("openFriendDetails", openFriendDetails)
     return (
@@ -54,9 +57,8 @@ export default function MessagePage() {
                         <div class="chat-body hide-scrollbar flex-1 h-100">
                             <div class="chat-body-inner" style={{paddingBottom:"87px"}}>
                                 <div class="py-6 py-lg-12">
-
-                                    
-                                    <div class="message">
+                                    <MessageContent messageList={Message} friend_id={params?.friend_id} />
+                                    {/* <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
                                         </Link>
@@ -159,8 +161,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message message-out">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
@@ -286,13 +286,9 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message-divider">
                                         <small class="text-muted">Monday, Sep 16</small>
                                     </div>
-
-                                    
                                     <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
@@ -351,8 +347,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message message-out">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
@@ -421,8 +415,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
@@ -481,13 +473,9 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message-divider">
                                         <small class="text-muted">Friday, Sep 20</small>
                                     </div>
-
-                                    
                                     <div class="message message-out">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
@@ -546,8 +534,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
@@ -650,8 +636,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message message-out">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
@@ -710,8 +694,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
@@ -770,7 +752,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="message message-out">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
@@ -828,7 +809,6 @@ export default function MessagePage() {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="message">
                                         <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-user-profile" class="avatar avatar-responsive">
                                             <img class="avatar-img" src="assets/img/avatars/2.jpg" alt=""/>
@@ -843,7 +823,7 @@ export default function MessagePage() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                             </div>
