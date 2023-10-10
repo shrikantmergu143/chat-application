@@ -23,7 +23,13 @@ export const initialData = {
         data:null,
         callBackModal:()=>{},
     },
-    openFriendDetails:{friend_id:""}
+    openFriendDetails:{friend_id:""},
+    chatList:{
+        data:[],
+        page:1,
+        totalPages:0,
+        totalRecords:0,
+    }
 }
 
 export const allReducers = (state = initialData, action) => {
@@ -78,6 +84,11 @@ export const allReducers = (state = initialData, action) => {
             return{
                 ...state,
                 openFriendDetails:action?.payload
+            }
+        case ActionTypes?.SET_STORE_CHAT_LIST:
+            return{
+                ...state,
+                chatList:action?.payload
             }
         default:
         return state;

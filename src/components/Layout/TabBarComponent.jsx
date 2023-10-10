@@ -55,8 +55,8 @@ export default function TabBarComponent() {
 
         </Link> */}
          <Link href="#" className="nav-link p-0 mt-lg-2 hide-tab" data-bs-toggle="modal" data-bs-target="#modal-profile">
-                   <Avatar className={"avatar avatar-online mx-auto"}/>
-                </Link>
+            <Avatar className={"avatar avatar-online mx-auto"}/>
+        </Link>
 
         {/* <!-- Nav items --> */}
         <div className='tabs-nav'>

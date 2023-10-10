@@ -10,6 +10,7 @@ export const API_RECEIVED_FRIEND_REQUESTS = "friend/received-friend-requests" //
 export const API_FRIEND_SEND_REQUEST = "friend/send_request" // Post method /6515b372e883a94a368044ca/send
 export const API_SEND_MESSAGE = "message" // Post method /6515b372e883a94a368044ca/send
 export const API_GET_MESSAGES = "message" // Get method /6515b372e883a94a368044ca/get_message
+export const API_GET_CHAT_LIST = "message/chat-list" // Get method /6515b372e883a94a368044ca/get_message
 export const API_GET_FRIEND_DETAILS = "friend" // Get 6515b372e883a94a368044ca/get_details
 
 export const App_url = {

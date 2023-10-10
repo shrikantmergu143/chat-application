@@ -156,6 +156,13 @@ a:active, a:focus, a:hover{text-decoration: none;}
     width: 64px;
     height: 64px;
 } */
+#tab-content-chats .card-list .card{border-radius: 0px;}
+#tab-content-chats .card-list{padding-right: 7px;}
+#tab-content-chats .card-list .card+.card {
+    border-top: 2px solid var(--bs-gray-dark)!important;
+    margin-top: 0px;
+}
+
 .icon-btn {
     height: 46px;
     width: 46px;
@@ -229,10 +236,13 @@ a:active, a:focus, a:hover{text-decoration: none;}
     --icon-font-lg: 24px;
     --icon-font-xl: 30px;
     --icon-font-xxl: 40px;
+    --bs-body-font-size: .85em
    }
    .navigation .rs-btn-icon.rs-btn i{height: 22px;width: 22px;}
    .navigation .rs-btn-icon.rs-btn i.UsersIcon{height: 18px;width: 28px;}
    .sidebar{max-height:100%;height: 100vh;padding-bottom: 70px;}
+   .avatar{height: 36px;width: 36px;}
+   .h5, h5{font-size: 1em;}
 }
 .accept_card .card-body .avatar_card{
     width: 60px;

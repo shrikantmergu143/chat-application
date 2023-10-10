@@ -19,14 +19,13 @@ function App() {
   return (
     <React.Fragment>
       <Routes>
-        {!access_token &&(
+        {access_token === ""?(
           <React.Fragment>
             <Route exact path={App_url.Login}  element={<AuthLogin/>} />
             <Route exact path={App_url.Register}  element={<AuthRegister/>} />
             <Route exact path={App_url.PageNotFound}  element={<Navigate replace={App_url?.Login} to={App_url.Login}/>} />
           </React.Fragment>
-        )}
-        {access_token &&(
+        ):(
           <React.Fragment>
             <Route exact path={App_url.Home}  element={<LandingPage/>} />
             <Route exact path={`${App_url.Message}/:friend_id`}  element={<MessagePage/>} />

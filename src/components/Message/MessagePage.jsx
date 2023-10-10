@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import DefaultLayout from '../Layout/DefaultLayout'
 import Link from '../common/Link'
 import { useNavigate, useParams } from 'react-router';
-import { API_GET_FRIEND_DETAILS, App_url } from '../common/Constant';
+import { API_GET_FRIEND_DETAILS, API_GET_MESSAGES, App_url } from '../common/Constant';
 import { GetRequestAPI } from '../common/GetRequest';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStoreOpenFriendDetails } from '../../redux/actions';
@@ -15,6 +15,7 @@ export default function MessagePage() {
     const navigate = useNavigate();
     useEffect(()=>{
         if(params?.friend_id){
+            callGetMessagesList();
             callGetFriendDetails();
             // eslint-disable-next-line
         }else{
@@ -32,6 +33,17 @@ export default function MessagePage() {
         }else{
             dispatch(setStoreOpenFriendDetails(null))
         }
+    }
+    const callGetMessagesList = async () =>{
+        const FriendId = params?.friend_id;
+        const url = `${API_GET_MESSAGES}/${FriendId}/get_message`;
+        const response = await GetRequestAPI(url, access_token);
+        console.log("response", response)
+        // if(response?.status === 200){
+        //     dispatch(setStoreMessageItemList({data:response?.data, friend_id:FriendId}))
+        // }else{
+        //     dispatch(setStoreMessageItemList({friend_id:FriendId, data:{} }))
+        // }
     }
     // console.log("openFriendDetails", openFriendDetails)
     return (

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import PropTypes from 'prop-types'
 import Avatar from "./Avatar"
+import { App_url } from './Constant'
 export default function ChatListItem(props) {
     const LayoutChat = () =>{
         if(props?.loaded){
@@ -33,18 +34,18 @@ export default function ChatListItem(props) {
         return(
             <>
                 <div className="col-auto">
-                    <Avatar variant={"online"}/>
+                    <Avatar variant={props?.details?.online ?"online":""} text={props?.details?.first_name}/>
                 </div>
 
                 <div className="col">
-                    <div className="d-flex align-items-center mb-3">
-                        <h5 className="me-auto mb-0 ellipsis">{props?.name}</h5>
-                        <span className="text-muted extra-small ms-2 w-nowrap">{props?.time}</span>
+                    <div className="d-flex align-items-center mb-1">
+                        <h5 className="me-auto mb-0 ellipsis">{props?.details?.first_name} {props?.details?.last_name}</h5>
+                        {props?.time && <span className="text-muted extra-small ms-2 w-nowrap">{props?.time}</span>}
                     </div>
 
                     <div className="d-flex align-items-center">
                         <div className="line-clamp me-auto">
-                        {props?.message}
+                        {props?.message?.message ?props?.message?.message :props?.details?.email}
                         </div>
 
                         {props?.unread &&(
@@ -84,8 +85,8 @@ export default function ChatListItem(props) {
         }
     }
   return (
-    <Link href="chat-direct.html" className="card border-0 text-reset">
-        <div className="card-body">
+    <Link to={`${App_url.Message}/${props?.friend_id}`} className="card border-0 text-reset">
+        <div className="card-body py-4">
             <div className="row gx-5">
                 {LayoutChat()}
                 {CommunityLayout()}
