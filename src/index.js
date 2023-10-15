@@ -9,6 +9,7 @@ import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter as Router } from "react-router-dom";
 import "./config/Firebase"
+import AppLoad from './AppLoad';
 const Toaster = React.lazy(()=>import('./components/common/Toaster'));
 const App = React.lazy(()=>import('./App'));
 
@@ -22,6 +23,7 @@ root.render(
           <Provider store={store}>
               <PersistGate loading={null} persistor={persistor}>
                   <App/>
+                  <AppLoad/>
                 <Toaster/>
               </PersistGate>
           </Provider>
