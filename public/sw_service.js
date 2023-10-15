@@ -28,9 +28,7 @@ const urlB64ToUint8Array = base64String => {
   self.addEventListener("install", async () => {
     // This will be called only once when the service worker is installed for first time.
     try {
-      const applicationServerKey = urlB64ToUint8Array(
-        "BJ5IxJBWdeqFDJTvrZ4wNRu7UY2XigDXjgiUBYEYVXDudxhEs0ReOJRBcBHsPYgZ5dyV8VjyqzbQKS8V7bUAglk"
-      );
+      const applicationServerKey = urlB64ToUint8Array("sadas");
       const options = { applicationServerKey, userVisibleOnly: true };
       const subscription = await self.registration.pushManager.subscribe(options);
       const response = await saveSubscription(subscription);
@@ -53,5 +51,6 @@ const urlB64ToUint8Array = base64String => {
       body,
       // here you can add more properties like icon, image, vibrate, etc.
     }
+    console.log("title", title)
     swRegistration.showNotification(title, options)
   }
