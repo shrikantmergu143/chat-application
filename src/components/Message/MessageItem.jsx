@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react'
 import { useSelector } from 'react-redux';
 // import { useSelector } from 'react-redux';
@@ -10,7 +11,7 @@ export default function MessageItem(props) {
     // const { access_token, openFriendDetails, MessageList } = useSelector((state)=>state?.allReducers);
     // const Message = MessageList[params?.friend_id];
   return (
-    <div class={`message ${user_id === item?.from_id ? "message-out":""}`}>
+    <div class={`message ${user_id == item?.from_id ? "message-out":""}`}>
         {/* <Link href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">
             <img class="avatar-img" src="assets/img/avatars/1.jpg" alt=""/>
         </Link> */}
@@ -25,7 +26,7 @@ export default function MessageItem(props) {
             </div>
 
             <div class="message-footer">
-                <span class="extra-small text-muted">08:45 PM</span>
+                <span class="extra-small text-muted">{moment(item?.create_at).format("HH:mm a")}</span>
             </div>
         </div>
     </div>
