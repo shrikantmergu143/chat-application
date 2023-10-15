@@ -23,7 +23,7 @@ export default function AppLoad() {
   useEffect(() => {
     // Initialize when the component mounts
     init();
-  }, []);
+  });
 
   const init = async () => {
     // You can trigger these actions in response to a user gesture like a button click
