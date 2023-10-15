@@ -23,7 +23,7 @@ export default function AppLoad() {
   useEffect(() => {
     // Initialize when the component mounts
     init();
-  });
+  }, []);
 
   const init = async () => {
     // You can trigger these actions in response to a user gesture like a button click
@@ -31,6 +31,7 @@ export default function AppLoad() {
     // For simplicity, I'm calling them directly here.
     await requestNotificationPermission();
     const swRegistration = await registerServiceWorker();
+    // console.log("swRegistration",await swRegistration?.pushManager?.getSubscription()    )
   };
 
   return (
