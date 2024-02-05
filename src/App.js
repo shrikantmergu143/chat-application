@@ -11,27 +11,41 @@ import AuthRegister from './components/Layout/Auth/AuthRegister'
 import LandingPage from './components/Landing/LandingPage'
 import CommonInitial from "./components/common/CommonInitial"
 import MessagePage from './components/Message/MessagePage';
+import DashboardPage from './components/Landing/DashboardPage';
 
 function App() {
-  const {access_token} = useSelector(state=>state?.allReducers);
-  console.log("firebase", firebase)
-
+  const {access_token, userDetails} = useSelector(state=>state?.allReducers);
+  console.log("firebase", userDetails)
+  const getUserloginRoute = () =>{
+    if(access_token !=="" ){
+      if(userDetails?.is_admin === true && userDetails?.user_type === "admin"){
+        return(
+          <React.Fragment>
+            <Route exact path={App_url.Dashboard}  element={<DashboardPage/>} />
+            <Route exact path={App_url.Home}  element={<Navigate to={App_url.Dashboard}/>} />
+          </React.Fragment>
+        )
+      }
+      return(
+        <React.Fragment>
+          <Route exact path={App_url.Home}  element={<LandingPage/>} />
+          <Route exact path={`${App_url.Message}/:friend_id`}  element={<MessagePage/>} />
+          <Route exact path={App_url.PageNotFound}  element={<LandingPage/>} />
+        </React.Fragment>
+      )
+    }
+    return(
+      <React.Fragment>
+        <Route exact path={App_url.Login}  element={<AuthLogin/>} />
+        <Route exact path={App_url.Register}  element={<AuthRegister/>} />
+        <Route exact path={App_url.PageNotFound}  element={<Navigate replace={App_url?.Login} to={App_url.Login}/>} />
+      </React.Fragment>
+    )
+  }
   return (
     <React.Fragment>
       <Routes>
-        {access_token === ""?(
-          <React.Fragment>
-            <Route exact path={App_url.Login}  element={<AuthLogin/>} />
-            <Route exact path={App_url.Register}  element={<AuthRegister/>} />
-            <Route exact path={App_url.PageNotFound}  element={<Navigate replace={App_url?.Login} to={App_url.Login}/>} />
-          </React.Fragment>
-        ):(
-          <React.Fragment>
-            <Route exact path={App_url.Home}  element={<LandingPage/>} />
-            <Route exact path={`${App_url.Message}/:friend_id`}  element={<MessagePage/>} />
-            <Route exact path={App_url.PageNotFound}  element={<LandingPage/>} />
-          </React.Fragment>
-        )}
+        {getUserloginRoute()}
       </Routes>
       <CommonInitial/>
     </React.Fragment>

@@ -19,6 +19,7 @@ export const App_url = {
     Login:"/login",
     Message:"/message",
     PageNotFound:"*",
+    Dashboard:"/dashboard"
 }
 
 export const TabLabel = {

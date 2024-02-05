@@ -11,22 +11,17 @@ export default function InputGroup(props) {
         return(
             <input
                 type={type}
-                className={`form-control form-control-${size} ${className} ${(leftIcon || leftLabel) &&'ps-0'} ${(rightIcon || rightLabel) &&'pe-0'}`}
+                className={`form-control form-control-${size} ${className} ${(leftIcon || leftLabel) &&'ps-0 leftIcon'} ${(rightIcon || rightLabel) &&'pe-0 rightIcon'}`}
                 placeholder={placeholder}
                 onChange={onChange}
                 name={name}
-                id={`${uuid} ${id}`}
+                id={`${uuid}`}
                 autoComplete=''
             />
         )
     }
-    return (
-        <div className={`form_group ${formClassName}`}>
-           {label && !floatStyle &&( 
-                    <label htmlFor={uuid} className='form-label text-muted'>
-                        {label}
-                    </label>
-                )}
+    const FormInput = () =>{
+        return(
             <div className={`${floatStyle?"form-floating":"input-group"}`}>
                 {leftLabel && (
                     <div className="input-group-text" onClick={onClickLeftLabel}>
@@ -55,6 +50,16 @@ export default function InputGroup(props) {
                     </label>
                 )}
             </div>
+        )
+    }
+    return (
+        <div className={`form_group ${formClassName}`}>
+            {label && !floatStyle &&( 
+                <label htmlFor={uuid} className='form-label text-muted'>
+                    {label}
+                </label>
+            )}
+           {FormInput()}
             {error &&( 
                 <span className='form-text-error text-danger'>
                     {error}

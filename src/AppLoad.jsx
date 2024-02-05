@@ -37,7 +37,6 @@ export default function AppLoad() {
   return (
     <div>
       {/* Add a button or another UI element to trigger the permission request and service worker registration */}
-      <button onClick={init}>Initialize</button>
     </div>
   );
 }

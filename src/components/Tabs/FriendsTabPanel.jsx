@@ -15,6 +15,7 @@ export default function FriendsTabPanel() {
         // eslint-disable-next-line
     },[]);
     const getCallUserFriendList =async () =>{
+        console.log("access_token", access_token)
         const response = await GetRequestAPI(API_ACCEPTED_FRIENDS, access_token);
         // console.log("response", response)
         if(response?.status === 200){

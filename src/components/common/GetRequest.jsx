@@ -3,6 +3,7 @@ export const GetRequestAPI = async (apiurl, access_token, data) => {
     const headers = {
       'Accept':"application/json",
     }
+    console.log("access_token", access_token)
     if(access_token){
       headers.Authorization = `Bearer ${access_token}`
     }

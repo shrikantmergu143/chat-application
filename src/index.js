@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 import { Provider } from 'react-redux';
 import store, { persistor } from './redux/store';
-import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter as Router } from "react-router-dom";
 import "./config/Firebase"
-import AppLoad from './AppLoad';
+// import AppLoad from './AppLoad';
+import { PersistGate } from 'redux-persist/integration/react';
 const Toaster = React.lazy(()=>import('./components/common/Toaster'));
 const App = React.lazy(()=>import('./App'));
 
@@ -23,7 +23,7 @@ root.render(
           <Provider store={store}>
               <PersistGate loading={null} persistor={persistor}>
                   <App/>
-                  <AppLoad/>
+                  {/* <AppLoad/> */}
                 <Toaster/>
               </PersistGate>
           </Provider>
